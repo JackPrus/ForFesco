@@ -1,6 +1,5 @@
 package by.prus.forfesco.controller;
 
-import by.prus.forfesco.dao.PlanedRepository;
 import by.prus.forfesco.model.entity.Planed;
 import by.prus.forfesco.service.interfaces.PlanedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,7 @@ public class PlanedController {
             path = "/findall",
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}
     )
-    public List<Planed> getAllPlaned(){
+    public List<Planed> getAllPlaned() {
         return planedService.findAll();
     }
-
 }

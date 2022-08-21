@@ -36,12 +36,9 @@ public class FactServiceImpl implements FactService {
     @Override
     public List<Fact> findByAgentAndOperation(String agent, String operation) {
         if (agent != null && operation != null) {
-            if (operation.equals("") && !agent.equals("")) {
-                return factRepository.findByAgentCode(agent);
-            } if (!operation.equals("") && agent.equals("")) {
-                return factRepository.findByOpCode(operation);
-            } if (!agent.equals("") && !operation.equals("")) {
-                return factRepository.findByAgentCodeAndOpCode(agent, operation);
+            if (operation.equals("") && !agent.equals("")) { return factRepository.findByAgentCode(agent); }
+            if (!operation.equals("") && agent.equals("")) { return factRepository.findByOpCode(operation); }
+            if (!agent.equals("") && !operation.equals("")) { return factRepository.findByAgentCodeAndOpCode(agent, operation);
             } else {
                 throw new EntityException(ErrorReason.WRONG_DATA.getDescriprtion());
             }

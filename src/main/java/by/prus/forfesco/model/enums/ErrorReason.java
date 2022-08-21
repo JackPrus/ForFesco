@@ -7,7 +7,12 @@ public enum ErrorReason {
     LINKS_CREATION_FAILURE("Ошибка при создании связей");
 
     private final String descriprtion;
-    ErrorReason(String descriprtion) { this.descriprtion = descriprtion; }
 
-    public String getDescriprtion() { return descriprtion; }
+    ErrorReason(String descriprtion) {
+        this.descriprtion = descriprtion;
+    }
+
+    public String getDescriprtion() {
+        return descriprtion;
+    }
 }

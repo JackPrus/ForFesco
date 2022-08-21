@@ -23,7 +23,7 @@ public class AgentController {
             produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}
     )
     public Agent getAgent(@PathVariable String id) {
-        return agentRepostory.findByAgentCode(id).orElseThrow(()->new EntityException(ErrorReason.OBJECT_BY_ID_NOT_FOUND.getDescriprtion()));
+        return agentRepostory.findByAgentCode(id).orElseThrow(() -> new EntityException(ErrorReason.OBJECT_BY_ID_NOT_FOUND.getDescriprtion()));
     }
 
     //http://localhost:8080/forfesco/agent/findall
@@ -39,11 +39,10 @@ public class AgentController {
             produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE},
             consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}
     )
-    public Agent createAgent (@RequestBody Agent agentRequest){
-        if (agentRequest.getAgentName().isEmpty()){
+    public Agent createAgent(@RequestBody Agent agentRequest) {
+        if (agentRequest.getAgentName().isEmpty()) {
             throw new EntityException(ErrorReason.EMPTY_OBJECT.getDescriprtion());
         }
         return agentRepostory.save(agentRequest);
     }
-
 }

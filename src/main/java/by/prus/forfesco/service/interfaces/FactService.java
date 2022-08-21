@@ -11,5 +11,5 @@ public interface FactService {
     List<Fact> findAll();
     List<Fact> findAllByFactSumLinked(BigDecimal sumLinked);
     void updateSetFact(Set<Fact> factToUpdate);
-    List<Fact>findByAgentAndOperation(String agent, String operation);
+    List<Fact> findByAgentAndOperation(String agent, String operation);
 }

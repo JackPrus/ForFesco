@@ -9,8 +9,8 @@ import java.util.List;
 
 @Repository
 public interface FactRepository extends JpaRepository<Fact, Long> {
-    List<Fact>findAllByFactSumLinked(BigDecimal factSumLinked);
-    List<Fact>findByAgentCode(String agentCode);
-    List<Fact>findByOpCode(String operationCode);
-    List<Fact>findByAgentCodeAndOpCode(String agentCode, String opCode);
+    List<Fact> findAllByFactSumLinked(BigDecimal factSumLinked);
+    List<Fact> findByAgentCode(String agentCode);
+    List<Fact> findByOpCode(String operationCode);
+    List<Fact> findByAgentCodeAndOpCode(String agentCode, String opCode);
 }
